@@ -281,7 +281,7 @@ class GPT2DiNADOSoftLMHeadModel(GPT2PreTrainedModel):
         )
 
     def _reorder_cache(self,
-            past_key_values: Tuple[Tuple[Tuple[torch.Tensor]], Optional], beam_idx: torch.Tensor
+            past_key_values: Tuple[Tuple[Tuple[torch.Tensor]], Tuple[Tuple[torch.Tensor]]], beam_idx: torch.Tensor
     ) -> Tuple[Tuple[Tuple[torch.Tensor]], Tuple[Tuple[torch.Tensor]]]:
         """
         This function is used to re-order the `past_key_values` cache if [`~PreTrainedModel.beam_search`] or
